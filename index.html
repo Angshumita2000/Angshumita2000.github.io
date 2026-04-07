@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angshumita Sarkar | Data Scientist</title>
+    <style>
+        :root {
+            --primary: #1a73e8; /* Google Blue */
+            --text: #3c4043;
+            --bg: #ffffff;
+            --light-bg: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--light-bg);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 { margin: 0; color: #202124; font-size: 2.5rem; }
+        .contact-info { margin-top: 10px; font-size: 0.9rem; color: #5f6368; }
+        .contact-info a { color: var(--primary); text-decoration: none; margin: 0 10px; }
+        
+        section { margin-bottom: 40px; }
+        h2 { 
+            color: var(--primary); 
+            border-left: 4px solid var(--primary); 
+            padding-left: 15px; 
+            text-transform: uppercase; 
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+        .job { margin-bottom: 30px; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+        .job-title { font-weight: bold; font-size: 1.1rem; color: #202124; }
+        .job-date { color: #70757a; font-size: 0.9rem; }
+        
+        .pillar { font-weight: 600; color: var(--primary); margin-top: 15px; display: block; }
+        ul { padding-left: 20px; margin-top: 5px; }
+        li { margin-bottom: 8px; }
+
+        .skills-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 20px; 
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .skill-cat strong { display: block; color: var(--primary); margin-bottom: 5px; }
+
+        @media (max-width: 600px) {
+            .job-header { flex-direction: column; }
+        }
+        @media print {
+            body { padding: 0; }
+            .skills-grid { background: none; border: 1px solid #ddd; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Angshumita Sarkar</h1>
+        <div class="contact-info">
+            Kolkata, WB, India | +91-6290651253<br>
+            <a href="mailto:angshumitasarkar1@gmail.com">Email</a> | 
+            <a href="#">LinkedIn</a> | 
+            <a href="#">Data Portfolio</a>
+        </div>
+    </header>
+
+    <section id="summary">
+        <h2>Professional Summary</h2>
+        <p>
+            Data Scientist with an <strong>M.Sc. in Statistics</strong> and high technical execution as a <strong>Google Data Analyst Apprentice</strong>. 
+            Proven track record in building end-to-end dashboarding solutions, automating complex system workflows using <strong>LLMs</strong>, 
+            and navigating large-scale data structures. Expert at bridging technical execution with stakeholder decision-making through 
+            scientific rigor and causal insights.
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">Google | Data Analyst Apprentice</span>
+                <span class="job-date">Nov 2024 – Present</span>
+            </div>
+            
+            <span class="pillar">Advanced Analytics & Automation</span>
+            <ul>
+                <li><strong>LLM Integration:</strong> Spearheaded the integration of internal technical databases into a Notebook LLM to create an interactive training chatbot, accelerating team onboarding.</li>
+                <li><strong>Automated Asset Mapping:</strong> Developed a suite of Plx and AAP scripts to aggregate ownership data across Sphinx systems and Google Workspace, eliminating manual audits during offboarding.</li>
+                <li><strong>Buginizer Scripting:</strong> Developed an automated reply script for Buginizer components and completed deep-dive analysis on SLO adherence, reducing manual toil.</li>
+            </ul>
+
+            <span class="pillar">Scalable Infrastructure & Dashboarding</span>
+            <ul>
+                <li><strong>Secure Data Isolation:</strong> Engineered a specialized JFGNext dashboard for vendors with row-level security, saving 400+ manual hours in migration testing.</li>
+                <li><strong>Dashboard Blueprinting:</strong> Delivered high-impact visibility solutions (Iris, WTP, JFGnext) and created a "Dashboard blueprint" to standardize future reporting.</li>
+                <li><strong>Self-Service Ops:</strong> Designed a consolidated data site for HCL vendors, reducing ticket volume by empowering partners with independent troubleshooting tools.</li>
+            </ul>
+
+            <span class="pillar">Major Migration & System Mapping</span>
+            <ul>
+                <li><strong>Ads Revamp:</strong> Identified overprovisioned groups during the Ads revamp, accelerating migration timelines through clear data mapping.</li>
+                <li><strong>Landscape Mapping:</strong> Successfully mapped complex system distributions across Sphinx, PeopleView, and Ganpati to create a single source of truth.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="job-title">State Bank of India | Project Intern</span>
+                <span class="job-date">June 2023 – Aug 2023</span>
+            </div>
+            <ul>
+                <li>Conducted market research for the POS system, identifying North-Star metrics and implementing predictive models to forecast sales trends.</li>
+                <li>Created real-time Power BI dashboards for performance measurement, resulting in a 10% increase in sales.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-cat">
+                <strong>Programming</strong>
+                Python (NumPy, Pandas, Scikit-learn), R (Shiny), SQL (BigQuery), LaTeX.
+            </div>
+            <div class="skill-cat">
+                <strong>Internal Systems</strong>
+                Plx, AAP, BORM, Sauron, PeopleView, Piper.
+            </div>
+            <div class="skill-cat">
+                <strong>Methodologies</strong>
+                Statistical Modeling, Causal Inference, NLP, Anomaly Detection, Design of Experiments.
+            </div>
+            <div class="skill-cat">
+                <strong>Visualization</strong>
+                Power BI, Advanced Excel, Google Sheets, Custom Dashboards.
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul>
+            <li><strong>M.Sc. in Statistics</strong> – Presidency University, Kolkata (2024)</li>
+            <li><strong>B.Sc. in Statistics</strong> – Presidency University, Kolkata (2022)</li>
+        </ul>
+    </section>
+
+    <section id="certifications">
+        <h2>Certifications & Leadership</h2>
+        <ul>
+            <li><strong>Qualified GATE 2024:</strong> Data Science and Artificial Intelligence.</li>
+            <li><strong>Noogler Champ:</strong> Peer mentor and facilitator for Google onboarding sessions.</li>
+            <li><strong>Summer Analytics 2023:</strong> Certificate of Merit, IIT Guwahati.</li>
+        </ul>
+    </section>
+
+</body>
+</html>
