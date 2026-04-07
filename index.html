@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angshumita Sarkar | Data Scientist Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
             --google-blue: #1a73e8;
@@ -15,6 +15,7 @@
             --text-light: #5f6368;
             --border: #dadce0;
             --bg-light: #f8f9fa;
+            --brand-font: 'Open Sans', sans-serif;
         }
 
         body {
@@ -25,6 +26,21 @@
             padding: 0;
             background-color: #fff;
         }
+
+        /* The Decorative Google Color Line */
+        .google-line {
+            height: 4px;
+            width: 100%;
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .line-segment { flex: 1; }
+        .blue { background: var(--google-blue); }
+        .red { background: var(--google-red); }
+        .yellow { background: var(--google-yellow); }
+        .green { background: var(--google-green); }
 
         .container {
             max-width: 1000px;
@@ -37,20 +53,21 @@
 
         header {
             grid-column: 1 / -1;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             margin-bottom: 20px;
         }
 
         h1 {
-            font-family: 'Google Sans', sans-serif;
+            font-family: var(--brand-font);
             font-size: 2.8rem;
             margin: 0;
             color: var(--text-dark);
             font-weight: 500;
+            letter-spacing: -0.5px;
         }
 
         .subtitle {
+            font-family: var(--brand-font);
             font-size: 1.2rem;
             color: var(--google-blue);
             font-weight: 500;
@@ -58,11 +75,11 @@
         }
 
         h2 {
-            font-family: 'Google Sans', sans-serif;
+            font-family: var(--brand-font);
             font-size: 1.3rem;
             color: var(--text-dark);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            text-transform: none; /* Google Sans style prefers Sentence Case */
+            font-weight: 500;
             border-bottom: 2px solid var(--google-blue);
             display: inline-block;
             margin-bottom: 20px;
@@ -78,61 +95,66 @@
             align-items: baseline;
             margin-bottom: 10px;
         }
-        .company { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
-        .role { font-weight: 500; color: var(--google-blue); }
-        .date { color: var(--text-light); font-size: 0.9rem; }
+        .company { font-family: var(--brand-font); font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
+        .role { font-family: var(--brand-font); font-weight: 500; color: var(--google-blue); }
+        .date { color: var(--text-light); font-size: 0.9rem; font-weight: 500; }
 
         .pillar {
+            font-family: var(--brand-font);
             font-weight: 700;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-dark);
             margin-top: 15px;
             display: block;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px;
         }
 
         ul { padding-left: 20px; margin-top: 8px; }
         li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
-        li strong { color: var(--text-dark); }
+        li strong { color: var(--text-dark); font-weight: 500; }
 
         .sidebar {
             background-color: var(--bg-light);
             padding: 30px;
-            border-radius: 8px;
+            border-radius: 12px;
             height: fit-content;
             position: sticky;
-            top: 20px;
+            top: 40px;
         }
 
         .sidebar-section { margin-bottom: 30px; }
         .sidebar-section h3 {
-            font-family: 'Google Sans', sans-serif;
-            font-size: 0.9rem;
-            color: var(--text-light);
+            font-family: var(--brand-font);
+            font-size: 0.85rem;
+            color: var(--text-dark);
             text-transform: uppercase;
             margin-bottom: 15px;
             border-bottom: 1px solid var(--border);
             padding-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .contact-link {
             display: block;
             color: var(--google-blue);
             text-decoration: none;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-size: 0.9rem;
+            font-family: var(--brand-font);
         }
 
         .tag {
             display: inline-block;
             background: #fff;
             border: 1px solid var(--border);
-            padding: 4px 10px;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            margin: 0 5px 8px 0;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 0 4px 8px 0;
             color: var(--text-dark);
+            font-family: var(--brand-font);
+            font-weight: 500;
         }
 
         .btn-print {
@@ -143,10 +165,12 @@
             text-decoration: none;
             display: block;
             text-align: center;
-            font-family: 'Google Sans', sans-serif;
+            font-family: var(--brand-font);
             font-weight: 500;
             margin-top: 20px;
             cursor: pointer;
+            border: none;
+            width: 100%;
         }
 
         @media (max-width: 800px) {
@@ -155,13 +179,20 @@
         }
 
         @media print {
-            .sidebar, .btn-print { display: none; }
+            .sidebar, .btn-print, .google-line { display: none; }
             .container { grid-template-columns: 1fr; margin: 0; padding: 0; }
             body { font-size: 11pt; }
         }
     </style>
 </head>
 <body>
+
+<div class="google-line">
+    <div class="line-segment blue"></div>
+    <div class="line-segment red"></div>
+    <div class="line-segment yellow"></div>
+    <div class="line-segment green"></div>
+</div>
 
 <div class="container">
     <header>
@@ -179,7 +210,7 @@
                         <span class="company">Google</span> | 
                         <span class="role">Data Analyst Apprentice</span>
                     </div>
-                    <span class="date">April 2024 – Present</span>
+                    <span class="date">April 2025 – Present</span>
                 </div>
 
                 <span class="pillar">Advanced Dashboarding & Visibility Solutions</span>
@@ -217,9 +248,9 @@
                     <span class="date">June 2023 – Aug 2023</span>
                 </div>
                 <ul>
-                    <li><strong>Predictive Analytics:</strong> Developed statistical models to forecast sales trends, driving data-driven strategies that resulted in a 10% increase in product sales[cite: 28, 38].</li>
-                    <li><strong>Market Intelligence:</strong> Designed and executed large-scale merchant perception surveys to identify North-Star metrics for the SBI POS ecosystem[cite: 26].</li>
-                    <li><strong>Executive Reporting:</strong> Built real-time Power BI dashboards to translate complex market research into actionable insights for the finance leadership team[cite: 27].</li>
+                    <li><strong>Predictive Analytics:</strong> Developed statistical models to forecast sales trends, driving data-driven strategies that resulted in a 10% increase in product sales.</li>
+                    <li><strong>Market Intelligence:</strong> Designed and executed large-scale merchant perception surveys to identify North-Star metrics for the SBI POS ecosystem.</li>
+                    <li><strong>Executive Reporting:</strong> Built real-time Power BI dashboards to translate complex market research into actionable insights for the finance leadership team.</li>
                 </ul>
             </div>
         </section>
@@ -233,7 +264,7 @@
                 </div>
                 <div class="role">M.Sc. in Statistics</div>
                 <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 5px;">
-                    Focus: Statistical Modeling, Forecasting, Clinical Trials, and Survival Analysis[cite: 11].
+                    Focus: Statistical Modeling, Forecasting, Clinical Trials, and Survival Analysis.
                 </p>
             </div>
             <div class="experience-item" style="margin-top: -20px;">
@@ -249,7 +280,7 @@
     <aside class="sidebar">
         <div class="sidebar-section">
             <h3>Contact</h3>
-            <span class="contact-link" style="color: var(--text-dark);">+91-6290651253</span>
+            <span class="contact-link" style="color: var(--text-dark); cursor: default;">+91-6290651253</span>
             <a href="mailto:angshumitasarkar1@gmail.com" class="contact-link">angshumitasarkar1@gmail.com</a>
             <a href="https://www.linkedin.com/in/angshumita-sarkar/" target="_blank" class="contact-link">LinkedIn Profile</a>
             <a href="https://Angshumita2000.github.io/" target="_blank" class="contact-link">Data Portfolio</a>
@@ -278,11 +309,11 @@
 
         <div class="sidebar-section">
             <h3>Achievements</h3>
-            <p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>GATE 2024 Qualified</strong><br>Data Science & AI [cite: 49]</p>
-            <p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>Summer Analytics Merit</strong><br>IIT Guwahati [cite: 47]</p>
+            <p style="font-size: 0.85rem; margin-bottom: 10px; font-family: var(--brand-font);"><strong>GATE 2024 Qualified</strong><br>Data Science & AI </p>
+            <p style="font-size: 0.85rem; margin-bottom: 10px; font-family: var(--brand-font);"><strong>Summer Analytics Merit</strong><br>IIT Guwahati </p>
         </div>
 
-        <a class="btn-print" onclick="window.print()">Download GResume</a>
+        <button class="btn-print" onclick="window.print()">Download GResume</button>
     </aside>
 </div>
 
