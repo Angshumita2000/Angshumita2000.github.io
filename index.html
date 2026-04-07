@@ -3,62 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angshumita Sarkar | Professional Resume</title>
+    <title>Angshumita Sarkar | Data Scientist Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #1a73e8; 
-            --text: #3c4043;
-            --bg: #ffffff;
-            --light-bg: #f8f9fa;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            background-color: var(--bg);
-        }
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--light-bg);
-            padding-bottom: 25px;
-            margin-bottom: 35px;
-        }
-        h1 { margin: 0; color: #202124; font-size: 2.6rem; }
-        .contact-info { margin-top: 12px; font-size: 0.95rem; color: #5f6368; line-height: 1.8; }
-        .contact-info a { color: var(--primary); text-decoration: none; margin: 0 8px; font-weight: 500; }
-        
-        .btn-container { margin-top: 20px; }
-        .btn {
-            background-color: var(--primary);
-            color: white !important;
-            padding: 10px 20px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: inline-block;
+            --google-blue: #1a73e8;
+            --google-red: #ea4335;
+            --google-yellow: #fbbc04;
+            --google-green: #34a853;
+            --text-dark: #202124;
+            --text-light: #5f6368;
+            --border: #dadce0;
+            --bg-light: #f8f9fa;
         }
 
-        section { margin-bottom: 45px; }
-        h2 { 
-            color: var(--primary); 
-            border-left: 5px solid var(--primary); 
-            padding-left: 15px; 
-            text-transform: uppercase; 
-            font-size: 1.1rem;
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+            padding: 0 20px;
+        }
+
+        header {
+            grid-column: 1 / -1;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
             margin-bottom: 20px;
         }
-        .job { margin-bottom: 35px; }
-        .job-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 8px; }
-        .job-title { font-weight: bold; font-size: 1.1rem; color: #202124; }
-        .job-date { color: #70757a; font-size: 0.9rem; }
-        
-        .pillar-title { font-weight: 600; color: var(--primary); margin-top: 15px; display: block; font-size: 0.95rem; }
-        ul { padding-left: 22px; margin-top: 8px; }
-        li { margin-bottom: 10px; }
 
-        @media (max-width: 600px) {
-            .job-header { flex
+        h1 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--google-blue);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        h2 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--google-blue);
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 4px;
+        }
+
+        .main-content section { margin-bottom: 50px; }
+
+        .experience-item { margin-bottom: 35px; }
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+        }
+        .company { font-weight: 700; font-size: 1.1rem; color: var(--text-dark); }
+        .role { font-weight: 500; color: var(--google-blue); }
+        .date { color: var(--text-light); font-size: 0.9rem; }
+
+        .pillar {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-top: 15px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        ul { padding-left: 20px; margin-top: 8px; }
+        li { margin-bottom: 12px; color: var(--text-light); font-size: 0.95rem; }
+        li strong { color: var(--text-dark); }
+
+        .sidebar {
+            background-color: var(--bg-light);
+            padding: 30px;
+            border-radius: 8px;
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .sidebar-section { margin-bottom: 30px; }
+        .sidebar-section h3 {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 5px;
+        }
+
+        .contact-link {
+            display: block;
+            color: var(--google-blue);
+            text-decoration: none;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #fff;
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin: 0 5px 8px 0;
+            color: var(--text-dark);
+        }
+
+        .btn-print {
+            background-color: var(--google-blue);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 4px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-family: 'Google Sans', sans-serif;
+            font-weight: 500;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 800px) {
+            .container { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+
+        @media print {
+            .sidebar, .btn-print { display: none; }
+            .container { grid-template-columns: 1fr; margin: 0; padding: 0; }
+            body { font-size: 11pt; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Angshumita Sarkar</h1>
+        <div class="subtitle">Data Scientist | Google Apprentice</div>
+    </header>
+
+    <div class="main-content">
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="company">Google</span> | 
+                        <span class="role">Data Analyst Apprentice</span>
+                    </div>
+                    <span class="date">April 2024 – Present</span>
+                </div>
+
+                <span class="pillar">Advanced Dashboarding & Visibility Solutions</span>
+                <ul>
+                    <li><strong>End-to-End Delivery:</strong> Conceptualized and deployed high-impact visualization suites including the Iris, WTP Info, and JFGnext migration dashboards.</li>
+                    <li><strong>Strategic Standardization:</strong> Authored a "Dashboard Blueprint" that serves as the gold standard for team reporting, ensuring cross-functional data consistency and rapid stakeholder decision-making.</li>
+                </ul>
+
+                <span class="pillar">Technical Automation & Operational Scalability</span>
+                <ul>
+                    <li><strong>Engineered Workflows:</strong> Developed sophisticated automated reply scripts within Buginizer components, significantly reducing manual intervention and operational toil.</li>
+                    <li><strong>SLO Integrity:</strong> Executed deep-dive analysis on Service Level Objective (SLO) adherence and administrative ownership, leading to enhanced component health visibility.</li>
+                    <li><strong>Legacy System Mastery:</strong> Proactively investigated complex architectures like BORM by engaging directly with senior stakeholders to accelerate independent bug resolution.</li>
+                </ul>
+
+                <span class="pillar">Large-Scale Migration & Ecosystem Mapping</span>
+                <ul>
+                    <li><strong>Migration Strategy:</strong> Mapped intricate Bifrost groups and established real-time status tracking for the JFG Next migration, ensuring zero-latency visibility for leadership.</li>
+                    <li><strong>Infrastructure Optimization:</strong> Identified and remediated overprovisioned groups during the Ads revamp, streamlining system access and improving security posture.</li>
+                    <li><strong>Unified Source of Truth:</strong> Synthesized disparate data from PeopleView, Ganpati, and Sauron to map Sphinx systems and publisher groups into a centralized asset repository.</li>
+                </ul>
+
+                <span class="pillar">Leadership & Cultural Impact</span>
+                <ul>
+                    <li><strong>Noogler Champ:</strong> Selected as a mentor to facilitate high-touch onboarding sessions, directly accelerating the integration and productivity of incoming Google employees.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="exp-header">
+                    <div>
+                        <span class="company">State Bank of India</span> | 
+                        <span class="role">Project Intern</span>
+                    </div>
+                    <span class="date">June 2023 – Aug 2023</span>
+                </div>
+                <ul>
+                    <li><strong>Predictive Analytics:</strong> Developed statistical models to forecast sales trends, driving data-driven strategies that resulted in a 10% increase in product sales[cite: 28, 38].</li>
+                    <li><strong>Market Intelligence:</strong> Designed and executed large-scale merchant perception surveys to identify North-Star metrics for the SBI POS ecosystem[cite: 26].</li>
+                    <li><strong>Executive Reporting:</strong> Built real-time Power BI dashboards to translate complex market research into actionable insights for the finance leadership team[cite: 27].</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="experience-item">
+                <div class="exp-header">
+                    <span class="company">Presidency University</span>
+                    <span class="date">2022 – 2024</span>
+                </div>
+                <div class="role">M.Sc. in Statistics</div>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 5px;">
+                    Focus: Statistical Modeling, Forecasting, Clinical Trials, and Survival Analysis[cite: 11].
+                </p>
+            </div>
+            <div class="experience-item" style="margin-top: -20px;">
+                <div class="exp-header">
+                    <span class="company">Presidency University</span>
+                    <span class="date">2019 – 2022</span>
+                </div>
+                <div class="role">B.Sc. in Statistics</div>
+            </div>
+        </section>
+    </div>
+
+    <aside class="sidebar">
+        <div class="sidebar-section">
+            <h3>Contact</h3>
+            <span class="contact-link" style="color: var(--text-dark);">+91-6290651253</span>
+            <a href="mailto:angshumitasarkar1@gmail.com" class="contact-link">angshumitasarkar1@gmail.com</a>
+            <a href="https://www.linkedin.com/in/angshumita-sarkar/" target="_blank" class="contact-link">LinkedIn Profile</a>
+            <a href="https://Angshumita2000.github.io/" target="_blank" class="contact-link">Data Portfolio</a>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Technical Stack</h3>
+            <div class="tag">Python</div>
+            <div class="tag">SQL (BigQuery)</div>
+            <div class="tag">R (Shiny)</div>
+            <div class="tag">Power BI</div>
+            <div class="tag">NumPy</div>
+            <div class="tag">Pandas</div>
+            <div class="tag">Scikit-learn</div>
+            <div class="tag">LaTeX</div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Core Competencies</h3>
+            <div class="tag">Statistical Modeling</div>
+            <div class="tag">Causal Inference</div>
+            <div class="tag">Anomaly Detection</div>
+            <div class="tag">Automation Scripts</div>
+            <div class="tag">Data Mapping</div>
+        </div>
+
+        <div class="sidebar-section">
+            <h3>Achievements</h3>
+            <p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>GATE 2024 Qualified</strong><br>Data Science & AI [cite: 49]</p>
+            <p style="font-size: 0.85rem; margin-bottom: 10px;"><strong>Summer Analytics Merit</strong><br>IIT Guwahati [cite: 47]</p>
+        </div>
+
+        <a class="btn-print" onclick="window.print()">Download GResume</a>
+    </aside>
+</div>
+
+</body>
 </html>
